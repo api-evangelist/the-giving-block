@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Derived from The Giving Block Public API reference operations
+  (https://docs.thegivingblock.com/reference/getting-started-1). No official hosted/remote
+  MCP server was found; this is a candidate tool surface only.
+api: The Giving Block Public API
+server:
+  official: false
+  transport: null
+  url: null
+  note: No first-party MCP server is published as of this pass.
+auth:
+  type: jwt-bearer
+  note: Tools would require an access token from POST /v1/login.
+tools:
+- name: list_organizations
+  operationId: GetOrganizationsList
+  description: List nonprofit organizations available to the partner.
+- name: get_organization
+  operationId: GetOrganizationById
+  description: Retrieve a single organization by id.
+- name: update_organization
+  operationId: UpdateOrganization
+  description: Update an organization's configuration.
+- name: get_widget_snippet
+  operationId: GetWidgetSnippet
+  description: Get the embeddable donation-widget snippet for an organization.
+- name: get_widget_url
+  operationId: GetWidgetUrl
+  description: Get the hosted donation-form URL for an organization.
+- name: list_currencies
+  operationId: GetCurrencyListV2
+  description: List supported cryptocurrencies (current V2 list).
+- name: get_crypto_usd_rate
+  operationId: GetCryptoToUSDRate
+  description: Get the current crypto-to-USD exchange rate.
+- name: create_deposit_address
+  operationId: CreateDepositAddress
+  description: Create a crypto donation deposit address (with QR) for a pledge.
+- name: create_stock_pledge
+  operationId: CreateStockDonationPledge
+  description: Create a stock donation pledge.
+- name: list_brokers
+  operationId: GetBrokersList
+  description: List supported stock brokers.
+- name: list_tickers
+  operationId: GetTickersList
+  description: List supported stock tickers.
+- name: get_ticker_cost
+  operationId: GetTickerCost
+  description: Get the current cost/price for a ticker.
+- name: submit_stock_donation
+  operationId: SubmitStockDonation
+  description: Submit a stock donation.
+- name: sign_stock_donation
+  operationId: SignStockDonation
+  description: Sign/authorize a submitted stock donation.
+- name: create_fiat_pledge
+  operationId: CreateFiatDonationPledge
+  description: Create a fiat/card donation pledge.
+- name: charge_fiat_pledge
+  operationId: ChargeFiatDonationPledge
+  description: Charge a previously created fiat/card donation pledge.
+- name: list_transactions
+  operationId: GetTransactionList
+  description: List donation transactions.
+- name: get_transaction
+  operationId: GetTransactionByUuid
+  description: Retrieve a single transaction by UUID.

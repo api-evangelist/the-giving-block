@@ -1,0 +1,67 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/reference/getting-started-1
+docs: https://docs.thegivingblock.com/
+api: The Giving Block Public API
+summary: >-
+  Cross-cutting request/response semantics for The Giving Block Public API, derived from
+  the published API reference. RESTful, resource-oriented URLs; accepts and returns
+  JSON-encoded data over TLS.
+transport:
+  protocol: https
+  media_type: application/json
+  base_urls:
+    production: https://public-api.tgbwidget.com
+    sandbox: https://public-api.sandbox.thegivingblock.com
+authentication:
+  style: jwt-bearer
+  header: Authorization
+  format: 'Bearer <accessToken>'
+  detail: See authentication/the-giving-block-authentication.yml
+request_tracing:
+  field: requestId
+  location: response body
+  description: Every response carries a requestId for correlation/support.
+error_envelope:
+  format: custom-json
+  fields:
+  - errorMessage
+  - errorType
+  - errorCode
+  - meta
+  detail: >-
+    Errors are returned as a JSON object (not RFC 9457 problem+json). errorType and the
+    optional errorCode are intended for programmatic handling. See
+    errors/the-giving-block-problem-types.yml
+success_envelope:
+  fields:
+  - data
+  - requestId
+  detail: Successful responses wrap the resource in a top-level `data` object plus requestId.
+versioning:
+  style: uri-path
+  detail: >-
+    Endpoints are versioned in the path (e.g. /v1/login). Some resources are additionally
+    versioned per-operation (GetCurrencyListV1 superseded by GetCurrencyListV2).
+  current: v1
+idempotency:
+  documented: false
+  detail: >-
+    No idempotency-key mechanism is documented. Pledge creation and charge operations are
+    separate steps (CreateFiatDonationPledge then ChargeFiatDonationPledge).
+pagination:
+  documented: false
+  detail: >-
+    List endpoints (GetTransactionList, GetOrganizationsList) exist; the reference does not
+    publish an explicit pagination parameter scheme.
+webhooks:
+  supported: true
+  encryption: AES-256
+  detail: See webhooks/the-giving-block-webhooks.yml
+rate_limits:
+  documented: false
+cross_links:
+  authentication: authentication/the-giving-block-authentication.yml
+  errors: errors/the-giving-block-problem-types.yml
+  lifecycle: lifecycle/the-giving-block-lifecycle.yml
+  webhooks: webhooks/the-giving-block-webhooks.yml

@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/reference/getting-started-1
+api: The Giving Block Public API
+format: custom-json
+envelope:
+  fields:
+  - name: errorMessage
+    description: Human-readable description of the error.
+  - name: errorType
+    description: Machine-readable error category for programmatic handling.
+  - name: errorCode
+    description: Optional numeric/string code for specific error conditions.
+  - name: meta
+    description: Additional context object accompanying the error.
+  - name: requestId
+    description: Correlation id echoed on every response for support/tracing.
+notes:
+- Errors are NOT RFC 9457 (application/problem+json); they use a proprietary JSON envelope.
+- errorType and errorCode are the fields intended for programmatic branching.
+problem_types:
+- type: INVALID_JWT_TOKEN
+  title: Invalid or expired JWT token
+  http_status: 401
+  remediation: Re-authenticate via POST /v1/login or refresh via POST /v1/refresh-tokens.
+- type: INVALID_REQUEST
+  title: Invalid request
+  http_status: 400
+  remediation: Validate the request body/parameters against the endpoint reference.

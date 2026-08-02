@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Grounded in real operationIds from the The Giving Block Public API reference
+  (https://docs.thegivingblock.com/reference/getting-started-1). No provider-published
+  Agent Skills / AGENTS.md were found.
+api: The Giving Block Public API
+skills:
+- name: the-giving-block-accept-crypto-donation
+  file: the-giving-block-accept-crypto-donation.md
+  description: Authenticate, pick a currency, quote the rate, create a crypto deposit address, and confirm settlement.
+  operations:
+  - login
+  - GetOrganizationsList
+  - GetCurrencyListV2
+  - GetCryptoToUSDRate
+  - CreateDepositAddress
+  - GetTransactionByUuid
+- name: the-giving-block-accept-stock-donation
+  file: the-giving-block-accept-stock-donation.md
+  description: Authenticate, resolve broker/ticker, price shares, then create, submit, and sign a stock donation.
+  operations:
+  - login
+  - GetBrokersList
+  - GetTickersList
+  - GetTickerCost
+  - CreateStockDonationPledge
+  - SubmitStockDonation
+  - SignStockDonation
+  - GetTransactionByUuid

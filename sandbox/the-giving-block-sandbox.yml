@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/docs/sandbox-intro
+api: The Giving Block Public API
+summary: >-
+  The Giving Block operates a fully separate sandbox environment mirroring production.
+  Sandbox credentials are issued separately from production credentials on request.
+  Organizations must be created in the sandbox (manually via support or programmatically
+  through the nonprofit onboarding flow) before donations can be tested.
+environments:
+- name: production
+  baseURL: https://public-api.tgbwidget.com
+- name: sandbox
+  baseURL: https://public-api.sandbox.thegivingblock.com
+credentials:
+  provisioning: manual
+  how: Contact the integrations team to request separate Sandbox API credentials.
+  shared_with_production: false
+test_helpers:
+- operationId: CreateTestDonation
+  description: Creates a test donation in the sandbox environment.
+test_flows:
+- Test crypto donations
+- Test stock donations
+- Test DAF (Donor Advised Fund) donations
+- Test card donations
+published_test_values:
+  cards: none-published
+  crypto_addresses: none-published
+  tokens: none-published
+  detail: >-
+    The Giving Block does not publish static test cards, test crypto addresses, or test
+    tokens on the sandbox intro page; testing procedures are documented per donation type.
+    No test values are fabricated here.

@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/reference/getting-started-1
+api: The Giving Block Public API
+versioning:
+  style: uri-path
+  current: v1
+  detail: >-
+    API version 1.0. Endpoints are versioned in the path (/v1/...). Individual resources
+    can carry their own version suffix as they evolve.
+deprecation:
+  policy_published: false
+  observed:
+  - operation: GetCurrencyListV1
+    status: superseded
+    successor: GetCurrencyListV2
+    detail: >-
+      V2 currency list is the current version; V1 remains documented as the prior version.
+      No formal Sunset/Deprecation (RFC 8594) header policy is published.
+sla:
+  published: false
+status_page:
+  url: null
+  detail: No dedicated public status page was found.
+support:
+  url: https://thegivingblock.com/about/contact/
+environments:
+- name: production
+  baseURL: https://public-api.tgbwidget.com
+- name: sandbox
+  baseURL: https://public-api.sandbox.thegivingblock.com

@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.thegivingblock.com/docs/embedded-donation-form and
+  https://docs.thegivingblock.com/reference/getting-started-1
+api: The Giving Block Public API
+summary: >-
+  The Giving Block ships embeddable, prebuilt donation UI surfaces (the "tgbwidget"
+  donation form) that partners can drop into their own sites, in addition to the raw API.
+  These are hosted/prebuilt front-end components distinct from a client SDK.
+families:
+- name: Donation Widget / Embedded Donation Form
+  kind: embeddable-web-widget
+  description: >-
+    A prebuilt, hosted donation form (crypto, stock, and card) that can be embedded on a
+    partner site or launched via a hosted URL. Rendered from a partner's organization
+    configuration.
+  loader_host: tgbwidget.com
+  docs: https://docs.thegivingblock.com/docs/embedded-donation-form
+  provisioning_operations:
+  - operationId: GetWidgetSnippet
+    description: Returns the embeddable HTML/JS snippet for an organization's donation widget.
+  - operationId: GetWidgetUrl
+    description: Returns a hosted URL to the standalone donation form for an organization.
+modes:
+- Embedded donation form (inline on partner site)
+- Standalone / hosted donation form (via widget URL)
+notes:
+- Distinct from an SDK/client library (none published). These are UI components.
+- Widget is served from the tgbwidget.com host family (same as the production API host).

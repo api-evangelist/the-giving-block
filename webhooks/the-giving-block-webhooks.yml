@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/docs/webhook-notifications
+api: The Giving Block Public API
+summary: >-
+  The Giving Block delivers server-to-server webhook notifications for donation lifecycle
+  events (e.g. incoming/settled donations and transaction updates). Webhook payloads are
+  AES-256 encrypted using an encryption key issued to the partner alongside their API
+  credentials, so partners must decrypt payloads before processing.
+delivery:
+  style: http-callback
+  direction: provider-to-partner
+  format: json
+security:
+  encryption: AES-256
+  key_provisioning: >-
+    AES encryption keys are issued by the integrations team together with API user
+    credentials and must be stored securely.
+configuration:
+  how: >-
+    Webhook endpoint URL and encryption keys are configured with The Giving Block during
+    partner onboarding (contact the integrations team).
+events:
+  documented: true
+  catalog_verbatim: not-captured
+  detail: >-
+    The provider documents webhook notifications tied to donation/transaction state
+    changes; specific event-type identifiers were not captured verbatim and are not
+    fabricated here. See the webhook-notifications doc page for the authoritative list.
+related:
+  transactions:
+  - operationId: GetTransactionByUuid
+    description: Poll/confirm a specific transaction referenced by a webhook.
+  - operationId: GetTransactionList
+    description: Reconcile transactions if a webhook is missed.
+docs: https://docs.thegivingblock.com/docs/webhook-notifications

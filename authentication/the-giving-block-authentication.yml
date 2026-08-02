@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.thegivingblock.com/reference/getting-started-1 (Authentication Flow)
+docs: https://docs.thegivingblock.com/docs/authentication-flow
+api: The Giving Block Public API
+summary: >-
+  JWT-based, token authentication. Partners request API user credentials (and AES
+  encryption keys for webhook notifications) by emailing The Giving Block's integrations
+  team. Credentials are exchanged at the login endpoint for a short-lived access token
+  plus a refresh token; the access token is sent as a bearer token on every request and
+  renewed via the refresh-tokens endpoint. Server-to-server integration.
+schemes:
+- id: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  in: header
+  name: Authorization
+  description: >-
+    JWT access token obtained from POST /v1/login and refreshed via
+    POST /v1/refresh-tokens. Sent as `Authorization: Bearer <accessToken>`.
+flows:
+- name: login
+  operationId: login
+  method: POST
+  path: /v1/login
+  description: Exchange issued API user credentials for an access token and refresh token.
+- name: refreshTokens
+  operationId: refreshTokens
+  method: POST
+  path: /v1/refresh-tokens
+  description: Exchange a valid refresh token for a new access token.
+credentials:
+  provisioning: manual
+  how: Email the integrations team to request API user credentials and AES webhook keys.
+  environments:
+  - name: production
+    baseURL: https://public-api.tgbwidget.com
+  - name: sandbox
+    baseURL: https://public-api.sandbox.thegivingblock.com
+notes:
+- No OAuth2 authorization/token URLs are published; auth is a custom JWT login exchange.
+- Webhook payloads are AES-256 encrypted using keys issued alongside API credentials.
+- Common auth error codes include INVALID_JWT_TOKEN.

@@ -1,27 +1,121 @@
 aid: the-giving-block
 name: The Giving Block
-description: 'The Giving Block is a company surfaced as a portfolio company of multicoin-capital and added
-  to the API Evangelist network as a stub for enrichment. Sector: crypto-web3. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  The Giving Block is a crypto-native fundraising platform that lets nonprofits and
+  enterprises accept cryptocurrency, stock, and card donations. Through its Public API
+  and embeddable donation widget, partners can build their own donation experiences or
+  embed The Giving Block's donation form to route gifts to more than 1,000 nonprofit
+  organizations in its network. The API securely accepts Bitcoin, Ethereum, and 100+
+  other cryptocurrencies, instantly converts crypto donations to cash so nonprofits
+  never have to touch crypto, and also supports stock and donor-advised-fund (DAF)
+  giving. It is a RESTful, JSON API with JWT-based authentication, AES-256 encrypted
+  webhook notifications, and separate production and sandbox environments. The Giving
+  Block was surfaced as a portfolio company of Multicoin Capital and enriched into the
+  API Evangelist network from its published developer documentation.
 url: https://raw.githubusercontent.com/api-evangelist/the-giving-block/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - multicoin-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: has-public-api
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://thegivingblock.com/favicon.ico
 tags:
 - Company
 - Crypto Web3
-apis: []
+- Donations
+- Fundraising
+- Nonprofit
+- Payments
+- Cryptocurrency
+- Stock Donations
+- Webhooks
+- Widgets
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: The Giving Block Public API
+  description: >-
+    RESTful JSON API for accepting crypto, stock, and card donations on behalf of
+    nonprofits in The Giving Block network. Provides organization management, currency
+    and exchange-rate lookups, crypto deposit-address creation, stock donation pledge
+    and signing flows, fiat/card pledge and charge operations, transaction retrieval,
+    and embeddable widget snippet/URL generation. Uses JWT authentication (login +
+    refresh-token endpoints) and AES-256 encrypted webhook notifications.
+  humanURL: https://docs.thegivingblock.com/
+  baseURL: https://public-api.tgbwidget.com
+  version: '1.0'
+  tags:
+  - Donations
+  - Cryptocurrency
+  - Payments
+  - Stock
+  properties:
+  - type: Documentation
+    url: https://docs.thegivingblock.com/
+  - type: APIReference
+    url: https://docs.thegivingblock.com/reference/getting-started-1
+  - type: Authentication
+    url: authentication/the-giving-block-authentication.yml
 common:
 - type: Website
   url: https://thegivingblock.com
+- type: Portal
+  url: https://thegivingblock.com/developer-resources/
+- type: Documentation
+  url: https://docs.thegivingblock.com/
+- type: APIReference
+  url: https://docs.thegivingblock.com/reference/getting-started-1
+- type: GettingStarted
+  url: https://docs.thegivingblock.com/docs/getting-started
+- type: Support
+  url: https://thegivingblock.com/about/contact/
+- type: Authentication
+  url: authentication/the-giving-block-authentication.yml
+- type: Conventions
+  url: conventions/the-giving-block-conventions.yml
+- type: ErrorCatalog
+  url: errors/the-giving-block-problem-types.yml
+- type: Conformance
+  url: conformance/the-giving-block-conformance.yml
+- type: Lifecycle
+  url: lifecycle/the-giving-block-lifecycle.yml
+- type: Sandbox
+  url: sandbox/the-giving-block-sandbox.yml
+- type: Components
+  url: components/the-giving-block-components.yml
+- type: Webhooks
+  url: webhooks/the-giving-block-webhooks.yml
+- type: MCPServer
+  url: mcp/the-giving-block-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/the-giving-block-llms.txt
+- type: DomainSecurity
+  url: security/the-giving-block-domain-security.yml
+- type: WellKnown
+  url: well-known/the-giving-block-well-known.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

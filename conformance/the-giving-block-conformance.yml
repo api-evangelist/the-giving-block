@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from The Giving Block API reference (https://docs.thegivingblock.com/reference/getting-started-1)
+  and published security page (https://thegivingblock.com/trust-security/).
+api: The Giving Block Public API
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is a custom JWT login/refresh exchange, not an OAuth2 grant flow.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery document (/.well-known/openid-configuration returns 404).
+- id: rfc9457
+  conforms: false
+  evidence: Errors use a proprietary JSON envelope (errorMessage/errorType/errorCode/meta), not problem+json.
+- id: json-api
+  conforms: false
+  evidence: Responses use a custom {data, requestId} envelope, not the JSON:API media type.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key header is documented.
+- id: pagination
+  conforms: false
+  evidence: List endpoints exist but no explicit pagination parameter scheme is published.
+- id: tls
+  conforms: true
+  evidence: TLS enforced (live probe TLSv1.3; docs require TLS v1.2 minimum). AES-256 encryption at rest/for webhooks.
+- id: rest-json
+  conforms: true
+  evidence: RESTful, resource-oriented URLs accepting and returning JSON-encoded data.
