@@ -1,10 +1,8 @@
 generated: '2026-07-21'
 method: derived
 status: candidate
-source: >-
-  Derived from The Giving Block Public API reference operations
-  (https://docs.thegivingblock.com/reference/getting-started-1). No official hosted/remote
-  MCP server was found; this is a candidate tool surface only.
+source: Derived from The Giving Block Public API reference operations (https://docs.thegivingblock.com/reference/getting-started-1).
+  No official hosted/remote MCP server was found; this is a candidate tool surface only.
 api: The Giving Block Public API
 server:
   official: false
@@ -69,3 +67,9 @@ tools:
 - name: get_transaction
   operationId: GetTransactionByUuid
   description: Retrieve a single transaction by UUID.
+deployment:
+  mode: none
+  verified: derived
+  tools: 18
+  checked: '2026-08-12'
+  source: catalog MCP census
