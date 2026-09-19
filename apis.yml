@@ -91,6 +91,11 @@ apis:
   - Donations
   - Cryptocurrency
   - Payments
+  - Stocks
+  tags_raw:
+  - Donations
+  - Cryptocurrency
+  - Payments
   - Stock
   properties:
   - type: Documentation
